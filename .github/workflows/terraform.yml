@@ -85,7 +85,6 @@ jobs:
       if: github.event_name == 'pull_request' && (success() || failure())
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
-        GITHUB_TOKEN: ${{ github.token }}
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
