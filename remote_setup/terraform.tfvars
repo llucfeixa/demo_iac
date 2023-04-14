@@ -1,2 +1,2 @@
-github_repository = "ado-labs-validate-iac"
+github_repository = "demo_iac"
 terraform_version = "1.2.3"
