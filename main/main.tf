@@ -36,6 +36,7 @@ resource "azurerm_app_service_plan" "app_service" {
   }
 }
 
+
 resource "azurerm_app_service" "app_service" {
   name                = local.app_service_name
   location            = azurerm_resource_group.app_service.location
