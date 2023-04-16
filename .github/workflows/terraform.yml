@@ -88,18 +88,16 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            if(${{ steps.checkov.outcome }}){
-              var img = '<img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg">';
-            }else{
-              var img = '<img src="https://qph.cf2.quoracdn.net/main-qimg-dea86baf410acc6bc938c95cad048c9a.webp">';
-            }
             const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
               #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
               #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
-            ${img}            
+            echo "${{ steps.checkov.outcome }}"
+            echo ${{ steps.checkov.outcome }}
+
+            <img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg" alt="image" width="200">
             
             <details><summary>Show Plan</summary>
 
@@ -110,6 +108,9 @@ jobs:
             <details><summary>Show Checkov Results</summary>
 
             ${process.env.CHECKOV_RESULTS}
+
+            echo "${process.env.CHECKOV_RESULTS}"
+            echo ${process.env.CHECKOV_RESULTS}
 
             </details>
 
