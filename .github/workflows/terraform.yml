@@ -88,7 +88,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            if(${{ steps.checkov.outcome }} == "success"){
+            if(${{ steps.checkov.outcome }}){
               var img = '<img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg">';
             }else{
               var img = '<img src="https://qph.cf2.quoracdn.net/main-qimg-dea86baf410acc6bc938c95cad048c9a.webp">';
