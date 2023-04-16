@@ -94,7 +94,7 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
-            echo process.env.CHECKOV_RESULTS.length
+            echo ${process.env.CHECKOV_RESULTS.length}
 
             ${
               (process.env.CHECKOV_RESULTS.length === 0)
