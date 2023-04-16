@@ -94,12 +94,12 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
-              ${{ if success() }}
-                ![Success Image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F261068109637021217%2F&psig=AOvVaw0x--xqGeFiuTzf_La2Ay05&ust=1681721589827000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiX9aGDrv4CFQAAAAAdAAAAABAJ)
+              ${{ if eq(steps.checkov.outcome, 'success') }}
+                ![Success Image](https://example.com/success.png)
               ${{ else }}
-                ![Fail Image](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.quora.com%2FWhat-are-some-of-the-best-epic-fail-memes&psig=AOvVaw3CuQGOC_K7Tb-meQurwLrf&ust=1681721684828000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCOConM-Drv4CFQAAAAAdAAAAABAE)
+                ![Fail Image](https://example.com/fail.png)
               ${{ endif }}
-              `; 
+              `;  
 
 
             <details><summary>Show Plan</summary>
