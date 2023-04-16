@@ -94,6 +94,8 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
+            echo process.env.CHECKOV_RESULTS.length
+
             ${
               (process.env.CHECKOV_RESULTS.length === 0)
               ? '<img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg" alt="Success Image" width="200">' 
