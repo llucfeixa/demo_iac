@@ -95,7 +95,7 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
             const imageUrl = process.env.IMAGE_URL;
-            const imageMarkdown = imageUrl ? `![Image](${imageUrl})\n\n` : '';
+            const imageMarkdown = imageUrl ? `[Image](${imageUrl})\n\n` : '';
             const commentBody = output + imageMarkdown;
             <details><summary>Show Plan</summary>
 
