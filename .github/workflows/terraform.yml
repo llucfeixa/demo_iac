@@ -94,10 +94,11 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
-            echo "${{ steps.checkov.outcome }}"
-            echo ${{ steps.checkov.outcome }}
-
-            <img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg" alt="image" width="200">
+            ${
+              (${{ steps.checkov.outcome }} == 'success') 
+              ? '<img src="https://example.com/success.png" alt="Success Image" width="200">' 
+              : '<img src="https://example.com/fail.png" alt="Fail Image" width="200">'
+            }
             
             <details><summary>Show Plan</summary>
 
@@ -108,9 +109,6 @@ jobs:
             <details><summary>Show Checkov Results</summary>
 
             ${process.env.CHECKOV_RESULTS}
-
-            echo "${process.env.CHECKOV_RESULTS}"
-            echo ${process.env.CHECKOV_RESULTS}
 
             </details>
 
