@@ -85,6 +85,7 @@ jobs:
         if: github.event_name == 'pull_request' && (success() || failure())
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+          IMAGE_URL: "https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -93,8 +94,9 @@ jobs:
               #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
-              `![Success Image](https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg)`
-
+            const imageUrl = process.env.IMAGE_URL;
+            const imageMarkdown = imageUrl ? `![Image](${imageUrl})\n\n` : '';
+            const commentBody = output + imageMarkdown;
             <details><summary>Show Plan</summary>
 
             \`\`\`${process.env.PLAN}\`\`\`
@@ -113,7 +115,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: output
+              body: commentBody
             })
 
         # On push to main, build or change infrastructure according to Terraform configuration files
