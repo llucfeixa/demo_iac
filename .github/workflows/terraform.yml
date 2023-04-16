@@ -94,13 +94,11 @@ jobs:
               #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
               #### Checkov 🧪\`${{ steps.checkov.outcome }}\`
 
-              ${{ if eq(steps.checkov.outcome, 'success') }}
-                ![Success Image](https://example.com/success.png)
-              ${{ else }}
-                ![Fail Image](https://example.com/fail.png)
-              ${{ endif }}
-              `;  
-
+              ${
+                steps.checkov.outcome == 'success' 
+                ? `![Success Image](https://example.com/success.png)` 
+                : `![Fail Image](https://example.com/fail.png)`
+              }
 
             <details><summary>Show Plan</summary>
 
