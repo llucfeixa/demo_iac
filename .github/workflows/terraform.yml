@@ -90,8 +90,8 @@ jobs:
 
             ${
               (process.env.CHECKOV_RESULTS.length === 5)
-              ? '<img src="https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg" alt="Success Image" width="300">' 
-              : '<img src="https://qph.cf2.quoracdn.net/main-qimg-dea86baf410acc6bc938c95cad048c9a.webp" alt="Fail Image" width="300">'
+              ? '<img src="https://www.meme-arsenal.com/memes/b6cdfa157f40d3967a87f71db54b832c.jpg" alt="Success Image" width="300">' 
+              : '<img src="https://avatars.githubusercontent.com/u/15311551?v=4" alt="Fail Image" width="300">'
             }
 
             <details><summary>Show Plan</summary>
