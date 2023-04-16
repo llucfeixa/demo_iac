@@ -96,8 +96,8 @@ jobs:
 
               ${
                 steps.checkov.outcome == 'success' 
-                ? `![Success Image](https://example.com/success.png)` 
-                : `![Fail Image](https://example.com/fail.png)`
+                ? `![Success Image](https://i.pinimg.com/736x/46/55/72/46557293b435cf5951ea4715da942e5c.jpg)` 
+                : `![Fail Image](https://qph.cf2.quoracdn.net/main-qimg-dea86baf410acc6bc938c95cad048c9a.webp)`
               }
 
             <details><summary>Show Plan</summary>
