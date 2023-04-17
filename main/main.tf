@@ -26,12 +26,12 @@ resource "azurerm_resource_group" "app_service" {
 resource "azurerm_app_service_plan" "app_service" {
   name                = local.app_service_plan_name
   location            = azurerm_resource_group.app_service.location
-  resource_group_name = azurerm_resource_group.app_service.name
+  resource_group_name = azurerm_resource_group.app_service.nam
 
   sku {
     tier     = var.asp_tier
     size     = var.asp_size
-    capacity = var.capacity
+    capacity =  var.capacity
   }
 }
 
@@ -40,7 +40,7 @@ resource "azurerm_app_service" "app_service" {
   location            = azurerm_resource_group.app_service.location
   resource_group_name = azurerm_resource_group.app_service.name
   app_service_plan_id = azurerm_app_service_plan.app_service.id
-  https_only          = true
+  #https_only          = true
 
   source_control {
     repo_url           = "https://github.com/ned1313/nodejs-docs-hello-world"
