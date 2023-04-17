@@ -26,12 +26,12 @@ resource "azurerm_resource_group" "app_service" {
 resource "azurerm_app_service_plan" "app_service" {
   name                = local.app_service_plan_name
   location            = azurerm_resource_group.app_service.location
-  resource_group_name = azurerm_resource_group.app_service.nam
+  resource_group_name = azurerm_resource_group.app_service.name
 
   sku {
     tier     = var.asp_tier
     size     = var.asp_size
-    capacity =  var.capacity
+    capacity = var.capacity
   }
 }
 
